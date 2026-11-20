@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editar assinatura</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Editar assinatura #{{ a.id }}</h1>
+    <form method="post" action="{{ url_for('atualizar', assinatura_id=a.id) }}" class="card form-grade">
+      <label>Serviço <input name="servico" required maxlength="80" value="{{ a.servico }}"></label>
+      <label>Categoria <input name="categoria" maxlength="80" value="{{ a.categoria }}"></label>
+      <label>Valor mensal (R$) <input name="valor_mensal" type="number" step="0.01" min="0" required value="{{ a.valor_mensal }}"></label>
+      <label>Dia da cobrança <input name="dia_cobranca" type="number" min="1" max="31" required value="{{ a.dia_cobranca }}"></label>
+      <label>Status
+        <select name="status">
+          <option value="ativa" {% if a.status == 'ativa' %}selected{% endif %}>Ativa</option>
+          <option value="cancelada" {% if a.status == 'cancelada' %}selected{% endif %}>Cancelada</option>
+        </select>
+      </label>
+      <button type="submit">Salvar</button>
+      <a href="{{ url_for('index') }}">Cancelar</a>
+    </form>
+  </main>
+</body>
+</html>

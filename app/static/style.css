@@ -1,0 +1,28 @@
+:root { --fundo:#f4f6f8; --card:#fff; --texto:#1b2733; --suave:#5b6b7a; --cor:#065a82; --perigo:#b3261e; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, sans-serif; background:var(--fundo); color:var(--texto); }
+main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { margin: 0 0 4px; }
+.sub { color: var(--suave); margin: 0 0 20px; }
+.card { background: var(--card); border-radius: 10px; padding: 16px; margin-bottom: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+form.card { display: grid; gap: 12px; }
+label { display: grid; gap: 4px; font-weight: 600; font-size: .9rem; }
+input, textarea { font: inherit; padding: 8px; border: 1px solid #c5ced6; border-radius: 6px; }
+button { font: inherit; padding: 8px 14px; border: 0; border-radius: 6px; background: var(--cor); color: #fff; cursor: pointer; }
+button.perigo { background: var(--perigo); }
+.lista { list-style: none; padding: 0; margin: 0; }
+.lista li { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.lista p { margin: 4px 0; }
+small { color: var(--suave); }
+.acoes { display: flex; gap: 10px; align-items: center; }
+.acoes form { margin: 0; }
+a { color: var(--cor); }
+.vazio { color: var(--suave); }
+
+/* formulário em colunas, selos de status e card do total */
+.form-grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; align-items: end; }
+.selo { font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 999px; margin-left: 0.4rem; color: #fff; }
+.selo.ativa { background: #2e7d32; }
+.selo.cancelada { background: #757575; }
+.total { display: flex; justify-content: space-between; align-items: center; }
+.total strong { font-size: 1.6rem; }
